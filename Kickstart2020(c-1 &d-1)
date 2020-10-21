@@ -1,3 +1,4 @@
+//C1
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -33,6 +34,39 @@ int main(){
 
 		}
 		cout<<"Case #"<<i+1<<":"<<" "<<count<<endl;
+	}
+	return 0;
+}
+
+
+//D1
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main(){
+	ll t;
+	ll p;
+	cin>>t;
+	p=t;
+	while(t--){
+		ll n;
+		cin>>n;
+		vector<ll> a;
+		for(ll i=0;i<n;i++){
+			ll la;
+			cin>>la;
+			a.push_back(la);
+		}
+		ll count=0;
+		ll maxa = 0;
+		for(ll i=0;i<n;i++){
+			if((a[i]>maxa || i==0) && (a[i]>a[i+1] || i==n-1)){
+				count++;
+			}
+			maxa = max(maxa,a[i]);			
+		}
+		cout<<"Case #"<<p-t<<":"<<" "<<count<<endl;
 	}
 	return 0;
 }
